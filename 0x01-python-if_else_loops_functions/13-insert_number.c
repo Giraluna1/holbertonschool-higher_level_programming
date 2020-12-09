@@ -18,7 +18,7 @@ if (!new_node)
 new_node->n = number;
 new_node->next = NULL;    
 
-if (*head == NULL)
+if (!*head || !head)
 {
     *head = new_node;
     return (new_node);
