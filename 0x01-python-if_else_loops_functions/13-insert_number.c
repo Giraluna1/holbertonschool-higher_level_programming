@@ -24,6 +24,13 @@ if (!*head || !head)
     return (new_node);
 }
 
+if ((*head)->n >= number)
+{
+    new_node->next = (*head);
+    (*head) = new_node;
+    return (new_node);
+}
+
 ptr1 = *head;
 ptr2 = *head;
 
@@ -47,6 +54,6 @@ if(!ptr1)
     ptr2->next = new_node;
     new_node->next = ptr1;
 }
- return (new_node);
+return (new_node);
 
 }
