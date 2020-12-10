@@ -5,7 +5,7 @@ if __name__ == "__main__":
     num_arguments = len(argv)
     argument = 1
 
-    if num_arguments < 1:
+    if num_arguments == 1:
         print('{} arguments.'.format(num_arguments-1))
     elif num_arguments == 2:
         print('{} argument:'.format(num_arguments-1))
