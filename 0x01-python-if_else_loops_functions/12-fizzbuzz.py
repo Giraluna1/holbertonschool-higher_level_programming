@@ -9,6 +9,6 @@ def fizzbuzz(num):
     else:
         return num
 
-for i in range(1, 100):
+for i in range(1, 101):
     print(fizzbuzz(i), end=' ')
 print()
