@@ -1,7 +1,4 @@
 #!/usr/bin/python3
 def multiply_by_2(a_dictionary):
-    new_dicty = dict(a_dictionary)
     dicty = sorted(a_dictionary.keys())
-    for item in dicty:
-        new_dicty[item] = a_dictionary[item] * 2
-    return new_dicty
+    return (dict(map(lambda item: a_dictionary[item] * 2, dicty)))
