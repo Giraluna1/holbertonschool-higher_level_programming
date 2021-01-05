@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+""" Square Class """
+
 class Square:
-    """python3 -c 'print(__import__("my_module").MyClass.__doc__)'
+    """ Class Empty
     """
     pass
