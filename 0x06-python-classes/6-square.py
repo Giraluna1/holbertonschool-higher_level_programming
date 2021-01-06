@@ -73,7 +73,7 @@ class Square():
         return self.__size * self.__size
 
     def my_print(self):
-        """ method print square
+        """ method print square.
         Return:
             figure square with the character #
         """
