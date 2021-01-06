@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Square Class documentation
 
- """
+"""
 
 
 class Square():
@@ -57,5 +57,5 @@ class Square():
             print()
         for i in range(self.__size):
             for i in range(self.__size):
-                print('#', end='')                
+                print('#', end='')
             print()
