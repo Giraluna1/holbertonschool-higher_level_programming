@@ -77,7 +77,7 @@ class Square():
         Return:
             figure square with the character #
         """
-        if self.__size is 0 or size is 0:
+        if self.__size is 0:
             print()
         for i in range(self.__position[1]):
             print()
