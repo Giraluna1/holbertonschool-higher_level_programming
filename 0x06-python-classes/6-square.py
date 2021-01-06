@@ -12,8 +12,7 @@ class Square():
 
     Private instance attribute:
         __size : size of square
-        __position: 
-    
+        __position:
 
     """
     __size = None
@@ -45,7 +44,7 @@ class Square():
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-    
+
     @property
     def position(self):
         """obtain where is the position of the square"""
@@ -57,13 +56,12 @@ class Square():
         Args:
             value : are two positive integers.
         """
-        if (type(value[0]) is not int or not isinstance(value[1], int)) or\
+        if (type(value[0]) is not int or type(value[1] is not int)) or\
             (len(value) is not 2) or (value[0] < 0 or value[1] < 0) or\
             type(value) is not tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
-    
 
     def area(self):
         """ method area.
@@ -79,7 +77,7 @@ class Square():
         Return:
             figure square with the character #
         """
-        if self.__size is 0:
+        if self.__size is 0 or self.size is 0:
             print()
         for i in range(self.__position[1]):
             print()
