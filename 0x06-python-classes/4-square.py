@@ -44,5 +44,4 @@ class Square():
         Args:
             None
         """
-        self.area = self.__size * self.__size
-        return self.area
+        return self.__size * self.__size
