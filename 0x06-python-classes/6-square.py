@@ -56,7 +56,7 @@ class Square():
         Args:
             value : are two positive integers.
         """
-        if (type(value[0]) is not int or type(value[1] is not int)) or\
+        if (type(value[0]) is not int or not isinstance(value[1], int)) or\
             (len(value) is not 2) or (value[0] < 0 or value[1] < 0) or\
             type(value) is not tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -77,7 +77,7 @@ class Square():
         Return:
             figure square with the character #
         """
-        if self.__size is 0 or self.size is 0:
+        if self.__size is 0 or size is 0:
             print()
         for i in range(self.__position[1]):
             print()
