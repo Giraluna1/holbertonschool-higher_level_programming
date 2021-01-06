@@ -24,4 +24,4 @@ class Square():
         elif size < 0:
             raise ValueError("size mut be >= 0")
         else:
-            self.__size = size #: private instance
+            self.__size = size
