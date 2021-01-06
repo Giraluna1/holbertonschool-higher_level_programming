@@ -53,7 +53,9 @@ class Square():
         Return:
             figure square with the character #
         """
+        if self.__size is 0:
+            print()
         for i in range(self.__size):
             for i in range(self.__size):
-                print('#', end='')
+                print('#', end='')                
             print()
