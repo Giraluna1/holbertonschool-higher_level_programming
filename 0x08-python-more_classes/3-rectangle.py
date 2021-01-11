@@ -63,6 +63,7 @@ class Rectangle():
             return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
+        """ Return: the figure of rectanlge in string"""
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
