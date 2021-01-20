@@ -25,6 +25,39 @@ Checking for PEP8:
 Checking for last blank line:
 	 >>> os.popen("cat -e 1-my_list.py | tail -1").read()[-1]
 	 '\n'
+Checking Adding elements:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
 
-Checking regular int:
-     >>>
+Checking print:
+     >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Cheking negative integer:
+    >>> my_list.append(-1)
+    >>> my_list.print_sorted()
+    [-1, 1, 2, 3, 4, 5]
+
+Checking A sorted list, print and printing with the method:
+    >>> my_list = MyList([1, 5, 15, 25])
+    >>> print(my_list)
+    [1, 5, 15, 25]
+    >>> my_list.print_sorted()
+    [1, 5, 15, 25]
+
+Checking an empty list:
+    >>> my_list = MyList()
+    >>> print(my_list)
+    []
+    >>> my_list.print_sorted()
+    []
+
+Checking All negatives:
+	>>> list1 = MyList()
+	>>> list1.extend([-10, -2, -100, -900, -50])
+	>>> list1.print_sorted()
+	[-900, -100, -50, -10, -2]
