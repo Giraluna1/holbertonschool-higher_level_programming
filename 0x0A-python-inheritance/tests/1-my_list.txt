@@ -1,0 +1,30 @@
+The ``Mylist`` module
+======================
+
+Using `Mylist``
+-------------------
+
+Importing the function from the module:
+	>>> Mylist = __import__("1-my_list").Mylist
+
+Checking for module docstring:
+	 >>> m = __import__("1-my_list").__doc__
+	 >>> len(m) > 1
+	 True
+
+Checking for function docstring:
+	 >>> f = __import__("1-my_list").Mylist.__doc__
+         >>> len(f) > 1
+         True
+
+Checking for PEP8:
+	 >>> import os
+	 >>> os.popen("pep8 1-my_list.py").read()
+	 ''
+
+Checking for last blank line:
+	 >>> os.popen("cat -e 1-my_list.py | tail -1").read()[-1]
+	 '\n'
+
+Checking regular int:
+     >>>

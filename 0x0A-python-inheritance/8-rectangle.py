@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" Module Integer validator """
-
+""" Module Rectangle """
 
 class BaseGeometry():
     """ Base Geometry class have:
@@ -23,3 +22,17 @@ class BaseGeometry():
             raise TypeError('{} must be an integer'.format(self.name))
         if self.value <= 0:
             raise ValueError('{} must be greater than 0'.format(self.name))
+
+class Rectangle(BaseGeometry):
+""" class that inherits from BaseGeomety """
+
+    __width = 0
+    __height = 0
+
+    def __init__(self, width, height):
+        """ instantation """
+        self.__width = width
+        self.__height = height
+
+        if integer_validator(width, s)
+
