@@ -2,7 +2,7 @@
 """ This is the Module My list """
 
 
-class Mylist(list):
+class MyList(list):
     """ inherits from list class
     """
 
