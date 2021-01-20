@@ -28,8 +28,3 @@ class Rectangle(BaseGeometry):
             [Rectangle] <width>/<height>
         """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
-
-r = Rectangle(3, 5)
-
-print(r)
-print(r.area())
