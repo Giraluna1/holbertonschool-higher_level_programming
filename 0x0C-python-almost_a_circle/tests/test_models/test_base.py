@@ -5,6 +5,7 @@ import pep8
 from unittest import TestCase
 from models.base import Base
 import inspect
+import json
 
 
 class TestBase(TestCase):
@@ -19,7 +20,7 @@ class TestBase(TestCase):
 
     def test_module_doc(self):
         """ check for module documentation """
-        self.assertTrue(len(base.__doc__) > 0)
+        self.assertTrue(len(Base.__doc__) > 0)
 
     def test_class_doc(self):
         """ check for documentation """
@@ -39,9 +40,9 @@ class TestBase(TestCase):
         self.assertEqual(Base("number").id, "number")
 
     def test_C_to_json_string(self):
-        """Test for to_json_string method """
-        self.assertEqual(Base.to_json_string(None), [])
-        self.assertEqual(Base.to_json_string([], []))
+        """ Test of to json string """
+        self.assertTrue(Base.to_json_string(None), [])
+        self.assertTrue(Base.to_json_string([]), [])
         self.assertEqual(Base.to_json_string([{'id': 12}]),
                          json.dumps([{'id': 12}]))
         self.assertEqual(Base.to_json_string([{'id': 12}]),
@@ -52,6 +53,3 @@ class TestBase(TestCase):
 
         self.assertEqual(Base.from_json_string(None), [])
         self.assertEqual(Base.from_json_string('[]'), [])
-
-if __name__ == '__main__':
-    unittest.main()
