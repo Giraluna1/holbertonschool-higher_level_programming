@@ -86,6 +86,3 @@ class Base:
                 return list_objs
         except Exception:
             return []
-
-
-
