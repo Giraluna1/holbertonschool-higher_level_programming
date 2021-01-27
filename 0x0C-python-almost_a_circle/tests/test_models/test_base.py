@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """ Module Unittest for base"""
 
-import unittest
 import pep8
 from unittest import TestCase
 from models.base import Base
-
+import inspect
 
 class TestBase(TestCase):
     """ test class Base """
@@ -17,7 +16,7 @@ class TestBase(TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def test_AA_documentation(self):
+    """def test_AA_documentation(self):
         """ test documentation """
 
         self.assertTrue(len(Base.__doc__) > 0)
@@ -25,7 +24,7 @@ class TestBase(TestCase):
 
         for name, method in methods:
             self.assertTrue(len(methods.__doc__) > 0)
-
+    """
     def test_B__init__(self):
         """ Test's for init method """
 
