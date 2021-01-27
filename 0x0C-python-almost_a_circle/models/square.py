@@ -44,7 +44,7 @@ class Square(Rectangle):
                 setattr(self, attr[arg], args[arg])
         else:
             for key, value in kwargs.items():
-                if hasattr(self, key)
+                if hasattr(self, key):
                     setattr(self, key, value)
 
     def to_dictionary(self):
