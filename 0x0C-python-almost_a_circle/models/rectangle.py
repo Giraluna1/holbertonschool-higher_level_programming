@@ -120,9 +120,9 @@ class Rectangle(Base):
         if len(args) > 0:
             for arg in range(len(args)):
                 setattr(self, attr[arg], args[arg])
-        else:
-            for key in kwargs:
-                setattr(self, key, kwargs[key])
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
 
     def to_dictionary(self):
         """ the dictionary representation of a Rectangle """
