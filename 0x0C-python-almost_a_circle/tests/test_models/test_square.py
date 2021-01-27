@@ -4,11 +4,11 @@
 import unittest
 import pep8
 
-
+from unittest import TestCase
 from models.square import Square
 
 
-class TestSquare(unittest.TestCase):
+class TestSquare(TestCase):
     """ Test the class Square """
     def test_pep8_conformance_square(self):
         """Test that we conform to PEP8."""

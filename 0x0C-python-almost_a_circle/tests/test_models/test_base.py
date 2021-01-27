@@ -3,15 +3,13 @@
 
 import unittest
 import pep8
-import inspect
-
-
+from unittest import TestCase
 from models.base import Base
 
 
-class TestBase(unittest.TestCase):
+class TestBase(TestCase):
     """ test class Base """
-    def test_pep8_conformance(self):
+    def test_A_pep8_conformance(self):
         """Test that we conforms to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/base.py',
@@ -19,46 +17,33 @@ class TestBase(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def test___init__(self):
+    def test_AA_documentation(self):
+        """ test documentation """
+        self.assertTrue(len(Base.__doc__) > 0)
+        methods = inspect.getmembers(Base, predictive=inspect.ismethod)
+
+        for name, method in methods:
+            self.assertTrue(len(methods.__doc__) > 0)
+
+    def test_B__init__(self):
         """ Test's for init method """
 
-        self.assertTrue(Base.__init__.__doc__)
         self.assertEqual(Base().id, 1)
+        self.assertEqual(Base().id, 2)
         self.assertEqual(Base(7).id, 7)
         self.assertEqual(Base("number").id, "number")
-        self.assertEqual(Base().id, 2)
 
-    def test_to_json_string(self):
+    def test_C_to_json_string(self):
         """ Test for to_json_string method """
 
-        json_string = Base().to_json_string({"id": 2020, "test": 1})
-        self.assertEqual(type(json_string), type("test"))
-        self.assertRegex(json_string, "\"id\": 2020")
-        self.assertRegex(json_string, "\"test\": 1")
+        self.assertEqual(Base.to_json_string(None), [])
+        self.assertEqual(Base.to_json_string([], [])
+        self.assertEqual(Base.to_json_string([{ 'id': 12 }]), json.dumps([{ 'id': 12 }]))
+        self.assertEqual(Base.to_json_string([{ 'id': 12 }]), json.dumps([{ 'id': 12 }]))
 
-    def test_save_to_file(self):
-        """ test for save_to_file method """
+    def test_D_from_json_string(self):
+        """ Tetst for from json string """
 
-        self.assertTrue(Base.save_to_file.__doc__)
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string('[]'), [])
 
-    def test_from_json_string(self):
-        """ Tests for from_json_string method """
-
-        json_string = Base().to_json_string({"id": 2000, "test": 1})
-        self.assertTrue(Base.from_json_string.__doc__)
-        say = Base.from_json_string(json_string)
-        self.assertEqual(say["id"], 2000)
-        self.assertEqual(say["test"], 1)
-
-    def test_create(self):
-        """ Tests for create method """
-
-        self.assertTrue(Base.create.__doc__)
-
-    def test_load_from_file(self):
-        """ Test's for load_from_file method """
-
-        self.assertTrue(Base.load_from_file.__doc__)
-
-if __name__ == '__main__':
-    unittest.main()

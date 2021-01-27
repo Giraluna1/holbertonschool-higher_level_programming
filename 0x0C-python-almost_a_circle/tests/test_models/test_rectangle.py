@@ -4,11 +4,11 @@
 import unittest
 import pep8
 
-
+from unittest import TestCase
 from models.rectangle import Rectangle
 
 
-class TestRectangle(unittest.TestCase):
+class TestRectangle(TestCase):
     """ Test the class Rectangle """
     def test_pep8_conformance_rectangle(self):
         """Test that we conform to PEP8."""
@@ -16,6 +16,8 @@ class TestRectangle(unittest.TestCase):
         result = pep8style.check_files(['models/rectangle.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
+
+    
 
 if __name__ == '__main__':
     unittest.main()
