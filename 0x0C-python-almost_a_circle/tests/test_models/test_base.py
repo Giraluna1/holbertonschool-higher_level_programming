@@ -6,6 +6,7 @@ from unittest import TestCase
 from models.base import Base
 import inspect
 
+
 class TestBase(TestCase):
     """ test class Base """
     def test_A_pep8_conformance(self):
@@ -16,15 +17,19 @@ class TestBase(TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    """def test_AA_documentation(self):
-        """ test documentation """
+    def test_module_doc(self):
+        """ check for module documentation """
+        self.assertTrue(len(base.__doc__) > 0)
 
+    def test_class_doc(self):
+        """ check for documentation """
         self.assertTrue(len(Base.__doc__) > 0)
-        methods = inspect.getmembers(Base, predictive=inspect.ismethod)
 
-        for name, method in methods:
-            self.assertTrue(len(methods.__doc__) > 0)
-    """
+    def test_method_docs(self):
+        """ check for method documentation """
+        for func in dir(Base):
+            self.assertTrue(len(func.__doc__) > 0)
+
     def test_B__init__(self):
         """ Test's for init method """
 
