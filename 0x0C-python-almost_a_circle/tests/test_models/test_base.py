@@ -19,6 +19,7 @@ class TestBase(TestCase):
 
     def test_AA_documentation(self):
         """ test documentation """
+
         self.assertTrue(len(Base.__doc__) > 0)
         methods = inspect.getmembers(Base, predictive=inspect.ismethod)
 
@@ -34,16 +35,16 @@ class TestBase(TestCase):
         self.assertEqual(Base("number").id, "number")
 
     def test_C_to_json_string(self):
-        """ Test for to_json_string method """
-
+        """Test for to_json_string method """
         self.assertEqual(Base.to_json_string(None), [])
-        self.assertEqual(Base.to_json_string([], [])
-        self.assertEqual(Base.to_json_string([{ 'id': 12 }]), json.dumps([{ 'id': 12 }]))
-        self.assertEqual(Base.to_json_string([{ 'id': 12 }]), json.dumps([{ 'id': 12 }]))
+        self.assertEqual(Base.to_json_string([], []))
+        self.assertEqual(Base.to_json_string([{'id': 12}]),
+                         json.dumps([{'id': 12}]))
+        self.assertEqual(Base.to_json_string([{'id': 12}]),
+                         json.dumps([{'id': 12}]))
 
     def test_D_from_json_string(self):
         """ Tetst for from json string """
 
         self.assertEqual(Base.from_json_string(None), [])
         self.assertEqual(Base.from_json_string('[]'), [])
-
