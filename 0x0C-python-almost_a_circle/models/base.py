@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Module Base class """
 
-
+import csv
 import json
 
 
@@ -86,3 +86,24 @@ class Base:
                 return list_objs
         except Exception:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ class method that serializes in CSV """
+
+        filename = cls.__name__
+
+        if list_objs is None:
+            list_objs = []
+
+        dicti = {}
+        for obj in list_objs:
+            dicti.update(obj.to_dictionary())
+
+        with open(filename+'.json', mode='w', encoding='utf-8') as csv_file:
+            if filename is 'Rectangle':
+                fieldname = ['id', 'width', 'height', 'x', 'y']
+            if filename is 'Square':
+                fieldname = ['id', 'size', 'x', 'y']
+            writer = csv.DictWriter(csv_file, fieldnames=fieldname)
+            writer.writerow(dicti)
