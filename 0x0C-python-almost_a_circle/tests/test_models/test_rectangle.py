@@ -12,6 +12,7 @@ from io import StringIO
 
 Rectangle = rectangle.Rectangle
 
+
 class TestRectangle(TestCase):
     """ test class Rectangle """
 
