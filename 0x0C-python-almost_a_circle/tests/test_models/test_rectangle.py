@@ -4,6 +4,7 @@
 import pep8
 from unittest import TestCase
 from models.rectangle import Rectangle
+from models import rectangle
 from models.base import Base
 import inspect
 import json
