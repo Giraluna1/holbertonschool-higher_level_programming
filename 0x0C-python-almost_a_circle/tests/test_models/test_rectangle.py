@@ -7,6 +7,8 @@ from models.rectangle import Rectangle
 from models.base import Base
 import inspect
 import json
+import sys
+from io import StringIO
 
 
 class TestRectangle(TestCase):
@@ -32,10 +34,19 @@ class TestRectangle(TestCase):
         for func in dir(Rectangle):
             self.assertTrue(len(func.__doc__) > 0)
 
+    def setUp(self):
+        """Method to set the start point"""
+        self.r1 = Rectangle(10, 8, 4, 2, 1)
+        sys.stdout = StringIO()
+
+    def tearDown(self):
+        """Clean everything up after running setup"""
+        sys.stdout = sys.__stdout__
+
     def test_B__init__(self):
         """ Test's for init method """
-        rectangle_1 = Rectangle(1, 2)
-        self.assertEqual(isinstance(rectangle_1, Base), True)
+        r1 = Rectangle(1, 2)
+        self.assertEqual(isinstance(r1, Base), True)
         self.assertEqual(isinstance(Rectangle(1, 2, 3), Base), True)
         self.assertTrue(isinstance(Rectangle(1, 2, 3, 4), Base))
         self.assertRaises(TypeError, Rectangle, ('1', 2))
