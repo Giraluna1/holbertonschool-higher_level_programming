@@ -4,6 +4,7 @@
 import pep8
 from unittest import TestCase
 from models.rectangle import Rectangle
+from models.base import Base
 import inspect
 import json
 
@@ -33,7 +34,8 @@ class TestRectangle(TestCase):
 
     def test_B__init__(self):
         """ Test's for init method """
-        self.assertTrue(isinstance(Rectangle(1, 2), Rectangle))
+        rectangle_1 = Rectangle(1, 2)
+        self.assertTrue(isinstance(rectangle_1, Base))
         self.assertTrue(isinstance(Rectangle(1, 2, 3), Rectangle))
         self.assertTrue(isinstance(Rectangle(1, 2, 3, 4), Rectangle))
         self.assertRaises(TypeError, Rectangle, ('1', 2))
