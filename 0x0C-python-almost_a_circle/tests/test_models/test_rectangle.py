@@ -3,7 +3,6 @@
 
 import pep8
 from unittest import TestCase
-from models.rectangle import Rectangle
 from models import rectangle
 from models.base import Base
 import inspect
@@ -11,9 +10,11 @@ import json
 import sys
 from io import StringIO
 
+Rectangle = rectangle.Rectangle
 
 class TestRectangle(TestCase):
     """ test class Rectangle """
+
     def test_A_pep8_conformance(self):
         """Test that we conforms to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
@@ -48,7 +49,3 @@ class TestRectangle(TestCase):
         """ Test's for init method """
         r1 = Rectangle(1, 2)
         self.assertEqual(isinstance(r1, Base), True)
-        self.assertEqual(isinstance(Rectangle(1, 2, 3), Base), True)
-        self.assertTrue(isinstance(Rectangle(1, 2, 3, 4), Base))
-        self.assertRaises(TypeError, Rectangle, ('1', 2))
-        self.assertRaises(TypeError, Rectangle, (1, '2'))
