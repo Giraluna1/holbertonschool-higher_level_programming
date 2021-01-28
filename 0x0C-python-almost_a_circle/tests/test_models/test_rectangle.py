@@ -35,7 +35,7 @@ class TestRectangle(TestCase):
     def test_B__init__(self):
         """ Test's for init method """
         rectangle_1 = Rectangle(1, 2)
-        self.assertTrue(isinstance(rectangle_1, Base))
+        self.assertTrue(isinstance(rectangle_1, Base), True)
         self.assertTrue(isinstance(Rectangle(1, 2, 3), Rectangle))
         self.assertTrue(isinstance(Rectangle(1, 2, 3, 4), Rectangle))
         self.assertRaises(TypeError, Rectangle, ('1', 2))
