@@ -1,23 +1,40 @@
 #!/usr/bin/python3
 """ Module Unittest for Rectangle"""
 
-import unittest
 import pep8
-
 from unittest import TestCase
 from models.rectangle import Rectangle
+import inspect
+import json
 
 
 class TestRectangle(TestCase):
-    """ Test the class Rectangle """
-    def test_pep8_conformance_rectangle(self):
-        """Test that we conform to PEP8."""
+    """ test class Rectangle """
+    def test_A_pep8_conformance(self):
+        """Test that we conforms to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
-        result = pep8style.check_files(['models/rectangle.py'])
+        result = pep8style.check_files(['models/rectangle.py',
+                                        'tests/test_models/test_rectangle.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    
+    def test_module_doc(self):
+        """ check for module documentation """
+        self.assertTrue(len(Rectangle.__doc__) > 0)
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_class_doc(self):
+        """ check for documentation """
+        self.assertTrue(len(Rectangle.__doc__) > 0)
+
+    def test_method_docs(self):
+        """ check for method documentation """
+        for func in dir(Rectangle):
+            self.assertTrue(len(func.__doc__) > 0)
+
+    def test_B__init__(self):
+        """ Test's for init method """
+        self.assertTrue(isinstance(Rectangle(1, 2), Rectangle))
+        self.assertTrue(isinstance(Rectangle(1, 2, 3), Rectangle))
+        self.assertTrue(isinstance(Rectangle(1, 2, 3, 4), Rectangle))
+        self.assertRaises(TypeError, Rectangle, ('1', 2))
+        self.assertRaises(TypeError, Rectangle, (1, '2'))
