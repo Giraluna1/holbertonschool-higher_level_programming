@@ -85,3 +85,51 @@ class TestRectangle(TestCase):
             r = Rectangle(1, 2, -3)
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             r = Rectangle(1, 2, 3, -4)
+
+    def test_E_area(self):
+        """ Test Area Exists """
+        r = Rectangle(1, 2)
+        self.assertEqual(r.area(), 2)
+
+    def test_F__str__(self):
+        """ Test __str__ exists """
+        r = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(r.__str__(), "[Rectangle] (12) 2/1 - 4/6")
+
+    def test_G_display_without_x_and_y(self):
+        """ Test for method Display exist with diferents cases"""
+
+        r1 = Rectangle(2, 5)
+        out1 = "##\n" \
+               "##\n" \
+               "##\n" \
+               "##\n" \
+               "##\n"
+
+        r1.display()
+        self.assertEqual(sys.stdout.getvalue(), out1)
+
+    def test_H_display_without_y(self):
+        """ Test for method Display exist with diferents cases"""
+
+        r2 = Rectangle(2, 2, 3)
+        out2 = "   ##\n" \
+               "   ##\n"
+
+        r2.display()
+        self.assertEqual(sys.stdout.getvalue(), out2)
+
+    def test_I_to_dictionary(self):
+        """ Test for method to dictionary exists """
+
+        r1 = Rectangle(10, 2, 1, 9, 19)
+        self.assertEqual(r1.to_dictionary(), {'x': 1,
+                                              'y': 9, 'id': 19,
+                                              'height': 2, 'width': 10})
+
+    def test_J_update(self):
+        """ Test for method update """
+
+        r1 = Rectangle(1, 2)
+        r1.update(10)
+        self.assertEqual(r1.__str__(), "[Rectangle] (10) 0/0 - 1/2")
