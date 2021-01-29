@@ -49,4 +49,20 @@ class TestRectangle(TestCase):
     def test_B__init__(self):
         """ Test's for init method """
         r1 = Rectangle(1, 2)
-        self.assertEqual(isinstance(r1, Base), True)
+        r2 = Rectangle(1, 2, 3)
+        r3 = Rectangle(1, 2, 3, 4)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r2.x, 3)
+        self.assertEqual(r3.y, 4)
+
+    def test_C_typeError(self):
+        """ test width, height, x and y are type integers """
+
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            r = Rectangle("1", 2)
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            r = Rectangle(1, "2")
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r = Rectangle(1, 2, "3")
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            r = Rectangle(1, 2, 3, "4")
