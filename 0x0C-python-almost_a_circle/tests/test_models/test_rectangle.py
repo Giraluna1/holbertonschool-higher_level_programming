@@ -51,9 +51,11 @@ class TestRectangle(TestCase):
         r1 = Rectangle(1, 2)
         r2 = Rectangle(1, 2, 3)
         r3 = Rectangle(1, 2, 3, 4)
+        r4 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(r1.width, 1)
         self.assertEqual(r2.x, 3)
         self.assertEqual(r3.y, 4)
+        self.assertEqual(r4.id, 5)
 
     def test_C_typeError(self):
         """ test width, height, x and y are type integers """
@@ -66,3 +68,20 @@ class TestRectangle(TestCase):
             r = Rectangle(1, 2, "3")
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r = Rectangle(1, 2, 3, "4")
+
+    def test_D_ValueError(self):
+        """ Test width, height are greather than cero,
+            x and y GreaterEqual than cero
+        """
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r = Rectangle(-1, 2)
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            r = Rectangle(1, -2)
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r = Rectangle(0, 2)
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            r = Rectangle(1, 0)
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            r = Rectangle(1, 2, -3)
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            r = Rectangle(1, 2, 3, -4)
