@@ -2,11 +2,11 @@
 
 const firstInt = parseInt(process.argv[2]);
 
-function factorial(num) {
-  let answer=1;
-  for (let item = 2; item <= num; item++) {
-    answer = answer * item;
-  return answer;
+function factorial (num) {
+  if (num === 0 || num === 1) {
+    return 1;
+  } else {
+    return num * factorial(num - 1);
+  }
 }
-result = factorial(firstInt);
-console.log(result);
+console.log(factorial(firstInt));
