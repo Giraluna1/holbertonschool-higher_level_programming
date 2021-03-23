@@ -54,178 +54,127 @@ $ sudo npm install semistandard --global
 </tr>
 <tr>
   <td>0</td>
-  <td>0-javascript_is_amazing.js</td>
-  <td>Write a script that prints “JavaScript is amazing”:
+  <td>0-rectangle.js</td>
+  <td>WWrite an empty class Rectangle that defines a rectangle:
 
-    You must create a constant variable called myVar with the value “JavaScript is amazing”
-    You must use console.log(...) to print all output
-    You are not allowed to use var
+    You must use the class notation for defining your class
 
    </td>
 </tr>
 <tr>
   <td>1</td>
-  <td>1-multi_languages.js</td>
-  <td>Write a script that prints 3 lines:
+  <td>1-rectangle.js</td>
+  <td>Write a class Rectangle that defines a rectangle:
 
-    The first line: “C is fun”
-    The second line: “Python is cool”
-    The third line: “JavaScript is amazing”
-    You must use console.log(...) to print all output
-    You are not allowed to use var
+    You must use the class notation for defining your class
+    The constructor must take 2 arguments w and h
+    Initialize the instance attribute width with the value of w
+    Initialize the instance attribute height with the value of h
 
 </td>
 </tr>
 <tr>
   <td>2</td>
-  <td>2-arguments.js</td>
-  <td>Write a script that prints a message depending of the number of arguments passed:
+  <td>2-rectangle.js</td>
+  <td>Write a class Rectangle that defines a rectangle:
 
-    If no arguments are passed to the script, print “No argument”
-    If only one argument is passed to the script, print “Argument found”
-    Otherwise, print “Arguments found”
-    You must use console.log(...) to print all output
-    You are not allowed to use var
-
-Reference: process.argv
+    You must use the class notation for defining your class
+    The constructor must take 2 arguments w and h
+    Initialize the instance attribute width with the value of w
+    Initialize the instance attribute height with the value of h
+    If w or h is equal to 0 or not a positive integer, create an empty object
 
 </td>
 </tr>
 <tr>
   <td>3</td>
-  <td>3-value_argument.js</td>
-  <td>Write a script that prints the first argument passed to it:
+  <td>3-rectangle.js</td>
+  <td>Write a class Rectangle that defines a rectangle:
 
-    If no arguments are passed to the script, print “No argument”
-    You must use console.log(...) to print all output
-    You are not allowed to use var
-    You are not allowed to use length
+    You must use the class notation for defining your class
+    The constructor must take 2 arguments: w and h
+    Initialize the instance attribute width with the value of w
+    Initialize the instance attribute height with the value of h
+    If w or h is equal to 0 or not a positive integer, create an empty object
+    Create an instance method called print() that prints the rectangle using the character X
 
 </td>
 </tr>
 <tr>
   <td>4</td>
-  <td>4-concat.js</td>
-  <td>Write a script that prints two arguments passed to it, in the following format: “ is ”
+  <td>4-rectangle.js/td>
+  <td>Write a class Rectangle that defines a rectangle:
 
-    You must use console.log(...) to print all output
-    You are not allowed to use var
+    You must use the class notation for defining your class
+    The constructor must take 2 arguments: w and h
+    Initialize the instance attribute width with the value of w
+    Initialize the instance attribute height with the value of h
+    If w or h is equal to 0 or not a positive integer, create an empty object
+    Create an instance method called print() that prints the rectangle using the character X
+    Create an instance method called rotate() that exchanges the width and the height of the rectangle
+    Create an instance method called double() that multiples the width and the height of the rectangle by 2
 
 </td>
 </tr>
 <tr>
   <td>5</td>
-  <td>5-to_integer.js</td>
-  <td>Write a script that prints My number: <first argument converted in integer> if the first argument can be converted to an integer:
+  <td>5-square.js</td>
+  <td>Write a class Square that defines a square and inherits from Rectangle of 4-rectangle.js:
 
-    If the argument can’t be converted to an integer, print “Not a number”
-    You must use console.log(...) to print all output
-    You are not allowed to use var
-    You are not allowed to use try/catch
+    You must use the class notation for defining your class and extends
+    The constructor must take 1 argument: size
+    The constructor of Rectangle must be called (by using super())
 
 </td>
 </tr>
 <tr>
   <td>6</td>
-  <td>6-multi_languages_loop.js</td>
-  <td>Write a script that prints 3 lines: (like 1-multi_languages.js) but by using an array of string and a loop
+  <td>6-square.js</td>
+  <td>Write a class Square that defines a square and inherits from Square of 5-square.js:
 
-    The first line: “C is fun”
-    The second line: “Python is cool”
-    The third line: “JavaScript is amazing”
-    You must use console.log(...) to print all output
-    You are not allowed to use var
-    You are not allowed to use any if/else statement
-    You can use only one console.log
-    You must use a loop (while, for, etc.)
+    You must use the class notation for defining your class and extends
+    Create an instance method called charPrint(c) that prints the rectangle using the character c
+        If c is undefined, use the character X
 
 </td>
 </tr>
 <tr>
   <td>7</td>
-  <td>7-multi_c.js</td>
-  <td>Write a script that prints x times “C is fun”
+  <td>7-occurrences.js</td>
+  <td>Write a function that returns the number of occurrences in a list:
 
-    Where x is the first argument of the script
-    If the first argument can’t be converted to an integer, print “Missing number of occurrences”
-    You must use console.log(...) to print all output
-    You are not allowed to use var
-    You can use only two console.log
-    You must use a loop (while, for, etc.)
+    Prototype: exports.nbOccurences = function (list, searchElement)
 
 </td>
 </tr>
 <tr>
   <td>8</td>
-  <td>8-square.js</td>
-  <td>Write a script that prints a square
+  <td>8-esrever.js</td>
+  <td>Write a function that returns the reversed version of a list:
 
-    The first argument is the size of the square
-    If the first argument can’t be converted to an integer, print “Missing size”
-    You must use the character X to print the square
-    You must use console.log(...) to print all output
-    You are not allowed to use var
-    You must use a loop (while, for, etc.)
+    Prototype: exports.esrever = function (list)
+    You are not allow to use the built-in method reverse
 
 </td>
 </tr>
 <tr>
   <td>9</td>
-  <td>9-add.js</td>
-  <td>Write a script that prints the addition of 2 integers
+  <td>9-logme.js</td>
+  <td>Write a function that prints the number of arguments already printed and the new argument value. (see example below)
 
-    The first argument is the first integer
-    The second argument is the second integer
-    You have to define a function with this prototype: function add(a, b)
-    You must use console.log(...) to print all output
-    You are not allowed to use var
+    Prototype: exports.logMe = function (item)
+    Output format: <number arguments already printed>: <current argument value>
 
 </td>
 </tr>
 <tr>
   <td>10</td>
-  <td>10-factorial.js</td>
-  <td>Write a script that computes and prints a factorial
+  <td>10-converter.js</td>
+  <td>Write a function that converts a number from base 10 to another base passed as argument:
 
-    The first argument is integer (argument can be cast as integer) used for computing the factorial
-    Factorial of NaN is 1
-    You must do it recursively
-    You must use a function
-    You must use console.log(...) to print all output
-    You are not allowed to use var
-
-</td>
-</tr>
-<tr>
-  <td>11</td>
-  <td>11-second_biggest.js</td>
-  <td>Write a script that searches the second biggest integer in the list of arguments.
-
-    You can assume all arguments can be converted to integer
-    If no argument passed, print 0
-    If the number of arguments is 1, print 0
-    You must use console.log(...) to print all output
-    You are not allowed to use var
-
-</td>
-</tr>
-<tr>
-  <td>12</td>
-  <td>12-object.js</td>
-  <td>Update this script to replace the value 12 with 89:
-
-    You are not allowed to use var
-
-</td>
-</tr>
-<tr>
-  <td>13</td>
-  <td>13-add.js</td>
-  <td>Write a function that returns the addition of 2 integers.
-
-    The function must be visible from outside
-    The name of the function must be add
-    You are not allowed to use var
+    Prototype: exports.converter = function (base)
+    You are not allowed to import any file
+    You are not allowed to declare any new variable (var, let, etc..)
 
 </td>
 </tr>
