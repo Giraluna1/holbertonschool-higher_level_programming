@@ -15,19 +15,19 @@ class Rectangle {
   }
 
   rotate () {
-    let lastWidth = this.width
-    let lastHeight = this.height
+    let lastWidth = this.width;
+    let lastHeight = this.height;
 
-    this.height = lastWidth
-    this.width = lastHeight
+    this.height = lastWidth;
+    this.width = lastHeight;
   }
 
   double () {
-    let lastWidth = this.width
-    let lastHeight = this.height
+    let lastWidth = this.width;
+    let lastHeight = this.height;
 
-    this.width = lastWidth * 2
-    this.height = lastHeight * 2
+    this.width = lastWidth * 2;
+    this.height = lastHeight * 2;
   }
 }
 
