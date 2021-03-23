@@ -27,6 +27,6 @@ class Rectangle {
     this.width = lastWidth * 2;
     this.height = lastHeight * 2;
   }
-}
+};
 
 module.exports = Rectangle;
