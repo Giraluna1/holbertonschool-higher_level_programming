@@ -17,7 +17,6 @@ class Rectangle {
   rotate () {
     let lastWidth = this.width;
     let lastHeight = this.height;
-
     this.height = lastWidth;
     this.width = lastHeight;
   }
@@ -25,7 +24,6 @@ class Rectangle {
   double () {
     let lastWidth = this.width;
     let lastHeight = this.height;
-
     this.width = lastWidth * 2;
     this.height = lastHeight * 2;
   }
