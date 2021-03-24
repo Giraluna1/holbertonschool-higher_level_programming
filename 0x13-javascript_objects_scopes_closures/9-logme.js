@@ -1,6 +1,6 @@
 #!/usr/bin/node
-const times = 0;
+let times = 0;
 exports.logMe = function (item) {
   console.log(`${times}: ${item}`);
   times++;
-}
+};
