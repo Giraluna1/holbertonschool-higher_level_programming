@@ -2,9 +2,8 @@
 
 const sorted = new Float64Array(process.argv.slice(2).sort());
 
-if (process.argv.length < 4) {
+if (process.argv.length <= 3) {
   console.log(0);
 } else {
-  const secondBigest = `${Number(sorted[sorted.length - 2])}`;
-  console.log(secondBigest);
+  console.log(`${Number(sorted[sorted.length - 2])}`);
 }
