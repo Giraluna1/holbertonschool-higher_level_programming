@@ -6,9 +6,10 @@ class Square extends SquareParent {
   constructor (size) {
     super(size);
   }
+
   charPrint (c) {
     if (c === undefined) {
-      c = 'X'
+      c = 'X';
     }
 
     for (let item = 0; item < this.height; item++) {
