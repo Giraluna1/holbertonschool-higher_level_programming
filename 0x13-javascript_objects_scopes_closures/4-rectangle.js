@@ -22,8 +22,6 @@ class Rectangle {
   }
 
   double () {
-    const lastWidth = this.width;
-    const lastHeight = this.height;
     this.width *= 2;
     this.height *= 2;
   }
