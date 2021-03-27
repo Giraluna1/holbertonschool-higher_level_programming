@@ -19,7 +19,8 @@ if __name__ == "__main__":
     # Accesing the MetaData
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'.
-        format(mysql_username, mysql_password, database_name), pool_pre_ping=True)
+        format(mysql_username, mysql_password, database_name),
+        pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     # create the session
