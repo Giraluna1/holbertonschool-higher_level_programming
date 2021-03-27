@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ Module  Get all states """
 
-import MySQLdb
 import sys
+import MySQLdb
 
 if __name__ == "__main__":
     conn = MySQLdb.connect(host="localHost", port=3306,
