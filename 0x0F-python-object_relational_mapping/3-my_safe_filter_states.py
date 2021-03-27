@@ -12,7 +12,7 @@ if __name__ == "__main__":
     # HERE I have to know SQL to grab all states in my database
     cur.execute(
         "SELECT * FROM states WHERE \
-         name=%s ORDER BY id ASC", (sys.argv[4], ))
+         name=(%s) ORDER BY id ASC", (sys.argv[4], ))
     full_states = cur.fetchall()
     for row in full_states:
         print(row)
