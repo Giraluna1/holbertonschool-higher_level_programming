@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Filter states by user input """
+"""
+Filter states by user input
+"""
 
 import MySQLdb
 import sys
