@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Filter states by user input
+Write a script that lists all cities from the
+database hbtn_0e_4_usa
 """
 
 import MySQLdb
