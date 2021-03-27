@@ -13,8 +13,9 @@ if __name__ == "__main__":
                            db=sys.argv[3], charset="utf8")
     cur = conn.cursor()
     # HERE I have to know SQL to grab all states in my database
-    cur.execute("SELECT * FROM states WHERE name LIKE BYNARY\
-    '{}'".format(sys.argv[4]))
+    cur.execute(
+        "SELECT * FROM states WHERE \
+            name = '{}' ORDER BY id ASC".format(sys.argv[4]))
 
     full_states = cur.fetchall()
     for row in full_states:
