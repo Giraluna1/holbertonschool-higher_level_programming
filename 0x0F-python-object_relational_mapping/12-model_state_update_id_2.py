@@ -13,12 +13,14 @@ if __name__ == "__main__":
 
     # Take the arguments
     mysql_username = sys.argv[1]
-    database_name = sys.argv[2]
+    mysql_password = sys.argv[2]
+    database_name = sys.argv[3]
 
     # Accesing the MetaData
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'.
-        format(mysql_username, "", database_name), pool_pre_ping=True)
+        format(mysql_username, mysql_password, database_name),
+        pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     # create the session
