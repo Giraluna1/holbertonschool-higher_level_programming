@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" All satates via SQLAlchemy """
+"""
+All satates via SQLAlchemy
+"""
 import sys
 import sqlalchemy
 from sqlalchemy import create_engine
