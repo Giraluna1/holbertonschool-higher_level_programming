@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" This is the Module state """
+"""
+This is the Module state
+"""
 
 
 from sqlalchemy import Column, Integer, String
