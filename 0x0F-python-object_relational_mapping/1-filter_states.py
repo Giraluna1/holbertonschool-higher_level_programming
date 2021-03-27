@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" Filter states
+""" Filter states write a scrip that list all states
+    with a name satarting with N (upper) from the databases
 """
 
 import sys
@@ -11,7 +12,6 @@ if __name__ == "__main__":
                            user=sys.argv[1], passwd=sys.argv[2],
                            db=sys.argv[3], charset="utf8")
     cur = conn.cursor()
-
     cur.execute(
         "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
     query_rows = cur.fetchall()
