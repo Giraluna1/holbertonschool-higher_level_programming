@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" Filter states """
+""" Filter states
+"""
 
 import MySQLdb
 import sys
@@ -9,7 +10,7 @@ if __name__ == "__main__":
                            user=sys.argv[1], passwd=sys.argv[2],
                            db=sys.argv[3], charset="utf8")
     cur = conn.cursor()
-    # HERE I have to know SQL to grab all states in my database
+
     cur.execute(
         "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
     query_rows = cur.fetchall()
