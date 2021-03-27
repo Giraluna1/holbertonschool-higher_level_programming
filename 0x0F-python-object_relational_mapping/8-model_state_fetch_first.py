@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-First state With ORM
+the first State object from the
+database hbtn_0e_6_usa ORM
 """
 import sys
 import sqlalchemy
@@ -25,9 +26,9 @@ if __name__ == "__main__":
     # create the session
     session = Session(engine)
 
-    for state in session.query(State).order_by(State.id).filter(State.id == 1):
-        if state is not None:
-            print("{}: {}".format(state.id, state.name))
-        else:
-            print("Nothing")
+    state = session.query(State).order_by(State.id).first()
+    if state is not None:
+        print("{}: {}".format(state.id, state.name))
+    else:
+        print("Nothing")
     session.close()
