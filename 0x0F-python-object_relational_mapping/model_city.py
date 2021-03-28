@@ -4,7 +4,6 @@ Module city class
 """
 
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
 from model_state import State, Base
 from sqlalchemy.orm import relationship
 
