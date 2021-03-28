@@ -18,6 +18,7 @@ if __name__ == "__main__":
 
     full_states = cur.fetchall()
     for row in full_states:
-        print(row)
+        if row[1] not is None:
+            print(row)
     cur.close()
     conn.close()
