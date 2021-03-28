@@ -35,3 +35,6 @@ if __name__ == "__main__":
 
     for city in full_cities:
         print(f'{city.state.name}: ({city.id}) {city.name}')
+
+    session.commit()
+    session.close()
