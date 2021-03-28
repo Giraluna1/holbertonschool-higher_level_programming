@@ -30,6 +30,6 @@ if __name__ == "__main__":
     # The query: all city objects
 
     for city in session.query(City).order_by(City.id).join(State):
-        print(f'{city.state.name}: ({city.id}) {city.name}')
+        print("{}: ({}) {}".format(city.state.name, city.id, city.name))
 
     session.close()
