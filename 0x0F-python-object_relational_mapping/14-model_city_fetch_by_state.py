@@ -19,8 +19,8 @@ if __name__ == "__main__":
     database_name = sys.argv[3]
 
     # Accesing the MetaData
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
-                           format(mysql_username, mysql_password, database_name),
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
+                           (mysql_username, mysql_password, database_name),
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
