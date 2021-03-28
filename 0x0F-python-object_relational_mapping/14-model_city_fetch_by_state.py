@@ -3,6 +3,7 @@
 prints all City objects
 from the database hbtn_0e_14_usa
 """
+
 import sys
 import sqlalchemy
 from sqlalchemy import create_engine
@@ -30,8 +31,8 @@ if __name__ == "__main__":
     session = Session(engine)
 
     # The query: all city objects
-    full_cities = session.query(City) \
-        .join(State) \
+    full_cities = session.query(City)\
+        .join(State).order_by(City.id)
 
     for city in full_cities:
         print(f'{city.state.name}: ({city.id}) {city.name}')
