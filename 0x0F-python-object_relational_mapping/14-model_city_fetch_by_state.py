@@ -7,11 +7,12 @@ import sys
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-from model_city import City
+
 
 if __name__ == "__main__":
     # import the layout of the table instead of Base class
     from model_state import State, Base
+    from model_city import City
 
     # Take the arguments
     mysql_username = sys.argv[1]
@@ -33,4 +34,4 @@ if __name__ == "__main__":
         .join(State) \
 
     for city in full_cities:
-        print(f'{city.state.name}:({city.id}) {city.name}')
+        print(f'{city.state.name}: ({city.id}) {city.name}')
