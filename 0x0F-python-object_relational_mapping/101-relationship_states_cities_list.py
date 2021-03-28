@@ -27,11 +27,11 @@ if __name__ == "__main__":
     # create the session
     session = Session(engine)
 
-    # The query: all city objects
+    # The query: all state objects
 
     for states in session.query(State).order_by(State.id).all():
         print("{}: {}".format(states.id, states.name))
         for cities in states.cities:
-            print("  {}: {}".format(cities.id, cities.name))
+            print("\t{}: {}".format(cities.id, cities.name))
 
     session.close()
