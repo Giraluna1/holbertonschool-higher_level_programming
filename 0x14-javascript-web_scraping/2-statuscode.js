@@ -4,7 +4,7 @@ const https = require('https');
 const url = process.argv[2];
 
 const req = https.request(url, res => {
-  console.log(`statusCode: ${res.statusCode}`);
+  console.log(`code: ${res.statusCode}`);
 });
 
 req.on('error', error => {
