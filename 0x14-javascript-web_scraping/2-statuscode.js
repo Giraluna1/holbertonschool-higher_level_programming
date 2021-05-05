@@ -7,8 +7,4 @@ const req = https.request(url, res => {
   console.log(`code: ${res.statusCode}`);
 });
 
-req.on('error', error => {
-  console.error(error);
-});
-
 req.end();
