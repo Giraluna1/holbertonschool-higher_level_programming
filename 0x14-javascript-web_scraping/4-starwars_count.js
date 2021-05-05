@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const url = process.argv[2];
-const WedgeAntilles = 'https://swapi-api.hbtn.io/api/people/18/';
+
 request(url, function (error, response, body) {
   if (error) {
     console.log(error);
@@ -10,7 +10,7 @@ request(url, function (error, response, body) {
     let count = 0;
     for (const result of results) {
       for (const character of result.characters) {
-        if (character.includes(WedgeAntilles)) {
+        if (character.includes('18')) {
           count += 1;
         }
       }
