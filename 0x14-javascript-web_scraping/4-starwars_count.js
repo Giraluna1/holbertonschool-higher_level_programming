@@ -6,20 +6,13 @@ request(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    const characters = JSON.parse(body).characters;
+    const results = JSON.parse(body).results;
     let count = 0;
-    for (const ch of characters) {
-      if (ch === WedgeAntilles) {
-        request(WedgeAntilles, function (error, response, body) {
-          if (error) {
-            console.log(error);
-          } else {
-            const films = JSON.parse(body).films;
-            for (const film in films) {
-              count += 1;
-            }
-          }
-        });
+    for (const result of results) {
+      for (const character of result.characters) {
+        if (character.includes(WedgeAntilles)) {
+          count += 1;
+        }
       }
     }
     console.log(count);
